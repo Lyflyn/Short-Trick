@@ -1,0 +1,17 @@
+size = int(input('Enter matrix  : ')) 
+a = b = []
+for i in range(size):
+    x=i+1
+    a.append([int(y) for y in input(f'Elements of row {x} : ').split()])
+print('Matrix : \n',a) 
+
+
+result = [[0 for i in range(len(b[0]))] for j in range(len(a))]        #<---- Entry 4 zero 
+
+for i in range(len(a)):
+    for j in range(len(b[0])):
+        for k in range(len(b)):
+            result[i][j] = result[i][j] + a[i][k] * b[k][j]
+print('Matrix multiplication : ') 
+for r in result:
+    print(r)
